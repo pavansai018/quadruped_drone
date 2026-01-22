@@ -22,7 +22,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="1.5708 0 0" />
       <geometry>
         <mesh
           filename="$(find quadruped_drone)/meshes/base_link.STL" />
@@ -296,7 +296,7 @@
     </collision>
   </link>
   <joint
-    name="joint_rotor_front_right"
+    name="joint_motor_front_right"
     type="fixed">
     <origin
       xyz="-0.053285 -0.13571 0.041658"

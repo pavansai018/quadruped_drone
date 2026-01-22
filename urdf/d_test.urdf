@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+  name="drone_v1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.115605092226254" />
+      <inertia
+        ixx="3.75767469277814E-05"
+        ixy="-1.0709603238069E-10"
+        ixz="-1.14861608382435E-19"
+        iyy="5.8294617050047E-05"
+        iyz="6.72280657348742E-10"
+        izz="2.46020331281748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/base_link_2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/base_link_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_front_left">
+<inertial>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <mass value="0.01"/>
+  <inertia
+    ixx="1e-4"
+    iyy="1e-4"
+    izz="1e-4"
+    ixy="0"
+    ixz="0"
+    iyz="0"/>
+</inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_front_left.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_front_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_front_left"
+    type="continuous">
+    <origin
+      xyz="0.079 -0.08 0.016"
+      rpy="-1.5708 0 1.8679" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_front_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_rear_left">
+ <inertial>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <mass value="0.01"/>
+  <inertia
+    ixx="1e-4"
+    iyy="1e-4"
+    izz="1e-4"
+    ixy="0"
+    ixz="0"
+    iyz="0"/>
+</inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_rear_left.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_rear_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rear_left"
+    type="continuous">
+    <origin
+      xyz="0.079 0.08 0.016"
+      rpy="-1.5708 0 1.2601" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_rear_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_front_right">
+<inertial>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <mass value="0.01"/>
+  <inertia
+    ixx="1e-4"
+    iyy="1e-4"
+    izz="1e-4"
+    ixy="0"
+    ixz="0"
+    iyz="0"/>
+</inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_front_right.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_front_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_front_right"
+    type="continuous">
+    <origin
+      xyz="-0.079 -0.08 0.016"
+      rpy="-1.5708 0 1.106" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_front_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_rear_right">
+<inertial>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <mass value="0.01"/>
+  <inertia
+    ixx="1e-4"
+    iyy="1e-4"
+    izz="1e-4"
+    ixy="0"
+    ixz="0"
+    iyz="0"/>
+</inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_rear_right.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/link_rear_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rear_right"
+    type="continuous">
+    <origin
+      xyz="-0.079 0.08 0.016"
+      rpy="-1.5708 0 2.0502" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_rear_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
