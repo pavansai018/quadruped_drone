@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="drone_v2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.025503 0.038672 0.058237"
+        rpy="0 0 0" />
+      <mass
+        value="0.062287" />
+      <inertia
+        ixx="1.9166E-05"
+        ixy="-1.071E-10"
+        ixz="1.4258E-21"
+        iyy="3.669E-05"
+        iyz="6.7228E-10"
+        izz="1.9057E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_motor_front_left">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0.00156927040068403 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00311443566278992" />
+      <inertia
+        ixx="1.35354541352132E-07"
+        ixy="-8.26540970200614E-22"
+        ixz="1.66667273318911E-16"
+        iyy="1.95522223390309E-07"
+        iyz="-5.97915695226919E-23"
+        izz="1.34826753725744E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_front_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_front_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_motor_front_left"
+    type="fixed">
+    <origin
+      xyz="0.10298 -0.13694 0.041658"
+      rpy="1.5708 0 -1.4082" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_motor_front_left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_rotor_front_left">
+    <inertial>
+      <origin
+        xyz="0 -0.00305103839673998 6.93889390390723E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.000976110556878245" />
+      <inertia
+        ixx="7.1903118765846E-07"
+        ixy="-1.79252425779606E-23"
+        ixz="-8.00276235424326E-09"
+        iyy="7.30074013114081E-07"
+        iyz="-1.20791823622267E-21"
+        izz="1.46086653135471E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_front_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_front_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rotor_front_left"
+    type="continuous">
+    <origin
+      xyz="0 0.013525 0"
+      rpy="0 -0.13451 3.1416" />
+    <parent
+      link="link_motor_front_left" />
+    <child
+      link="link_rotor_front_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_motor_rear_left">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0.00156927040068403 3.22658566531686E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.00311443566278992" />
+      <inertia
+        ixx="1.3535454129256E-07"
+        ixy="-7.78099376789394E-22"
+        ixz="-1.66576319847477E-16"
+        iyy="1.95522223390309E-07"
+        iyz="3.66820389282289E-23"
+        izz="1.34826753785315E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_rear_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_rear_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_motor_rear_left"
+    type="fixed">
+    <origin
+      xyz="0.10422 0.019327 0.041658"
+      rpy="1.5708 0 0.16257" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_motor_rear_left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_rotor_rear_left">
+    <inertial>
+      <origin
+        xyz="0 -0.00305103839673997 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.000976110556878246" />
+      <inertia
+        ixx="7.19031187658462E-07"
+        ixy="-7.32883271206653E-24"
+        ixz="-8.00276235424288E-09"
+        iyy="7.30074013114083E-07"
+        iyz="-1.08085696857641E-21"
+        izz="1.46086653135471E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_rear_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_rear_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rotor_rear_left"
+    type="continuous">
+    <origin
+      xyz="0 0.013525 0"
+      rpy="-3.1416 1.0975 0" />
+    <parent
+      link="link_motor_rear_left" />
+    <child
+      link="link_rotor_rear_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_motor_front_right">
+    <inertial>
+      <origin
+        xyz="2.63677968348475E-16 0.00156927040068403 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.00311443566278991" />
+      <inertia
+        ixx="1.35354541225179E-07"
+        ixy="-7.79255689675097E-22"
+        ixz="-1.38549893866435E-16"
+        iyy="1.95522223390309E-07"
+        iyz="-2.04001360076566E-22"
+        izz="1.34826753852696E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_front_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_front_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rotor_front_right"
+    type="fixed">
+    <origin
+      xyz="-0.053285 -0.13571 0.041658"
+      rpy="1.5708 0 -2.979" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_motor_front_right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_rotor_front_right">
+    <inertial>
+      <origin
+        xyz="0 -0.00305103839673997 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.000976110556878236" />
+      <inertia
+        ixx="7.1903118765846E-07"
+        ixy="2.90579459305951E-24"
+        ixz="-8.00276235424277E-09"
+        iyy="7.30074013114081E-07"
+        iyz="8.0788593879246E-23"
+        izz="1.4608665313547E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_front_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_front_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rotor_front_right"
+    type="continuous">
+    <origin
+      xyz="0 0.013525 0"
+      rpy="0 -0.94346 3.1416" />
+    <parent
+      link="link_motor_front_right" />
+    <child
+      link="link_rotor_front_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_motor_rear_right">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-17 0.00156927040068404 4.16333634234434E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00311443566278992" />
+      <inertia
+        ixx="1.3535454128834E-07"
+        ixy="-7.46475816613025E-22"
+        ixz="1.65857278210764E-16"
+        iyy="1.95522223390309E-07"
+        iyz="-1.3265124877004E-22"
+        izz="1.34826753789536E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_rear_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_motor_rear_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_motor_rear_right"
+    type="fixed">
+    <origin
+      xyz="-0.05205 0.020562 0.041658"
+      rpy="1.5708 0 1.7334" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_motor_rear_right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_rotor_rear_right">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-18 -0.00305103839673997 6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.000976110556878232" />
+      <inertia
+        ixx="7.19031187658461E-07"
+        ixy="-5.38795941915461E-25"
+        ixz="-8.00276235424218E-09"
+        iyy="7.30074013114082E-07"
+        iyz="1.70003497014633E-24"
+        izz="1.4608665313547E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_rear_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_v2/meshes/link_rotor_rear_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rotor_rear_right"
+    type="continuous">
+    <origin
+      xyz="0 0.013525 0"
+      rpy="3.1416 0.31682 0" />
+    <parent
+      link="link_motor_rear_right" />
+    <child
+      link="link_rotor_rear_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
