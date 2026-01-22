@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="drone">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0254856069891037 0.047869379212526 0.0582149212175753"
+        rpy="0 0 0" />
+      <mass
+        value="0.115605092226254" />
+      <inertia
+        ixx="3.75767469277814E-05"
+        ixy="-1.0709603238069E-10"
+        ixz="-1.14861608382435E-19"
+        iyy="5.8294617050047E-05"
+        iyz="6.72280657348742E-10"
+        izz="2.46020331281748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_front_left">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -0.004347 7.6328E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0011218" />
+      <inertia
+        ixx="7.2027E-07"
+        ixy="-1.7186E-23"
+        ixz="-8.0028E-09"
+        iyy="7.3045E-07"
+        iyz="-1.2074E-21"
+        izz="1.5848E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_front_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_front_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_front_left"
+    type="continuous">
+    <origin
+      xyz="0.10298 -0.13694 0.053883"
+      rpy="-1.5708 0 1.8679" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_front_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_rear_left">
+    <inertial>
+      <origin
+        xyz="-1.3878E-17 -0.004347 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0011218" />
+      <inertia
+        ixx="7.2027E-07"
+        ixy="-6.1279E-24"
+        ixz="-8.0028E-09"
+        iyy="7.3045E-07"
+        iyz="-1.0624E-21"
+        izz="1.5848E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_rear_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_rear_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rear_left"
+    type="continuous">
+    <origin
+      xyz="0.10422 0.019327 0.053883"
+      rpy="-1.5708 0 1.2601" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_rear_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_front_right">
+    <inertial>
+      <origin
+        xyz="0 -0.004347 6.9389E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0011218" />
+      <inertia
+        ixx="7.2027E-07"
+        ixy="3.4709E-24"
+        ixz="-8.0028E-09"
+        iyy="7.3045E-07"
+        iyz="8.0748E-23"
+        izz="1.5848E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_front_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_front_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_front_right"
+    type="continuous">
+    <origin
+      xyz="-0.053285 -0.13571 0.053883"
+      rpy="-1.5708 0 1.106" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_front_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_rear_right">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 -0.004347 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0011218" />
+      <inertia
+        ixx="7.2027E-07"
+        ixy="-4.099E-25"
+        ixz="-8.0028E-09"
+        iyy="7.3045E-07"
+        iyz="2.7093E-24"
+        izz="1.5848E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_rear_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone/meshes/link_rear_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rear_right"
+    type="continuous">
+    <origin
+      xyz="-0.05205 0.020562 0.053883"
+      rpy="-1.5708 0 2.0502" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_rear_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
