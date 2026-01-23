@@ -4,6 +4,7 @@ from launch.substitutions import Command, LaunchConfiguration
 from launch import LaunchDescription
 from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node
+from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 import os
 
@@ -11,8 +12,11 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
     urdf_name = 'drone_v1.urdf'
     urdf = os.path.join(get_package_share_directory('quadruped_drone'), 'urdf', urdf_name)
+    control_yaaml_file = os.path.join(get_package_share_directory(
+        'quadruped_drone'
+    ), 'config', 'ros2_control.yaml')
     robot_desc = ParameterValue(
-        Command(['xacro ', urdf]),
+        Command(['xacro ', urdf, ' ', 'ros2_control_yaml:=', control_yaaml_file]),
         value_type=str
     )
     declare_use_sim_time_cmd = DeclareLaunchArgument(
@@ -62,12 +66,50 @@ def generate_launch_description():
         arguments=[],
     )
 
+    spawner_jsb = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'joint_state_broadcaster',
+            '--controller-manager',
+            '/controller_manager',
+        ],
+        output='screen',
+    )
+
+    spawner_rotor_velocity_controller = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'rotor_velocity_controller',
+            '--controller-manager',
+            '/controller_manager',
+        ],
+        output='screen',
+    )
+    wait_for_control_manager = Node(
+        package='quadruped_drone',
+        executable='wait_for_controller_manager',
+        output='screen',
+    )
+    spawn_after_controller_manager = RegisterEventHandler(
+        OnProcessExit(
+            target_action=wait_for_control_manager,
+            on_exit=[
+                spawner_jsb,
+                spawner_rotor_velocity_controller,
+            ],
+        ),
+    )
+
     ld = LaunchDescription()
 
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(gz_sim)
     ld.add_action(gz_spawn_entity)
     ld.add_action(gz_ros2_bridge)
+    ld.add_action(wait_for_control_manager)
+    ld.add_action(spawn_after_controller_manager)
     ld.add_action(start_robot_state_publisher_cmd)
 
     return ld

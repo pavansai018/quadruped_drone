@@ -15,6 +15,7 @@ setup(
         (os.path.join('share', package_name, 'worlds'), glob(os.path.join('worlds', '*'))),
         (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*'))),
         (os.path.join('share', package_name, 'meshes'), glob(os.path.join('meshes', '*'))),
+        (os.path.join('share', package_name, 'config'), glob(os.path.join('config', '*'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -29,6 +30,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'wait_for_controller_manager = quadruped_drone.wait_for_controller_manager:main',
         ],
     },
 )

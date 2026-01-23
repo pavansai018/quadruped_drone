@@ -1,0 +1,19 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz
+
+    rotor_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    
+rotor_velocity_controller:
+  ros__parameters:
+    joints:
+      - joint_front_left
+      - joint_rear_left
+      - joint_rear_right
+      - joint_front_right
+
+    interface_name: velocity
