@@ -1,5 +1,5 @@
 from ament_index_python.packages import get_package_share_directory
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, RegisterEventHandler, SetEnvironmentVariable
 from launch.substitutions import Command, LaunchConfiguration
 from launch import LaunchDescription
 from launch_ros.parameter_descriptions import ParameterValue
@@ -11,7 +11,9 @@ import os
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
     urdf_name = 'drone_v1.urdf'
+    world_name = 'quadcopter_world.sdf'
     urdf = os.path.join(get_package_share_directory('quadruped_drone'), 'urdf', urdf_name)
+    world = os.path.join(get_package_share_directory('quadruped_drone'), 'worlds', world_name)
     control_yaaml_file = os.path.join(get_package_share_directory(
         'quadruped_drone'
     ), 'config', 'ros2_control.yaml')
@@ -28,7 +30,7 @@ def generate_launch_description():
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(gz_sim_share, 'launch', 'gz_sim.launch.py')),
         launch_arguments={
-            'gz_args': f'-r empty.sdf'
+            'gz_args': f'-r empty.sdf',
         }.items()
 
     )
